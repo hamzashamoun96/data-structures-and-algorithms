@@ -108,7 +108,7 @@ Here is an example of the input:
 
 const sortByPrice = (arr) => {
   arr.sort((a, b) => {
-    return a.price - b.price
+    return parseInt(a.price) - parseInt(b.price)
   })
   return arr;
 };
@@ -123,13 +123,15 @@ For example, ['Alphabet', 'alphabet', 'carrot', 'Zebra'] is correctly sorted, an
 
 const alphabetizeBetter = (arr) => {
   arr.sort((a, b) => {
-    if (a.name.toUpperCase() < b.name.toUpperCase()){
-       return 1;
-     }
-      else if (a.name.toUpperCase() > b.name.toUpperCase()) {
-        return -1;}
-      else {
-        return 0;}
+    if (a.toUpperCase() < b.toUpperCase()) {
+      return -1;
+    }
+    else if (a.toUpperCase() > b.toUpperCase()) {
+      return 1;
+    }
+    else {
+      return 0;
+    }
   })
   return arr;
 };
@@ -141,7 +143,11 @@ Write a function named sortByLength that takes in an array of strings and return
 ------------------------------------------------------------------------------------------------ */
 
 const sortByLength = (arr) => {
-  // Solution code here...
+  let arr2 = arr.sort();
+  arr2.sort((a, b) => {
+    return a.length - b.length
+  })
+  return arr2;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -153,8 +159,12 @@ For example, [1, 14, 0.2, -281, 54782] is only correctly sorted in that order.
 ------------------------------------------------------------------------------------------------ */
 
 const sortNumbersByLength = (arr) => {
-  // Solution code here...
+  arr.sort((a, b) => {
+    return a.toString().length - b.toString().length
+  })
+  return arr;
 };
+
 
 /*-----------------------------------------------------------------------------------------------
 CHALLENGE 10 - Stretch Goal
@@ -175,7 +185,18 @@ const people = [
 ];
 
 const sortPeople = (arr) => {
-  // Solution code here...
+  arr.sort((a, b) => {
+    if (a.lastName.toUpperCase() < b.lastName.toUpperCase()) {
+      return -1;
+    }
+    else if (a.lastName.toUpperCase() > b.lastName.toUpperCase()) {
+      return 1;
+    }
+    else {
+      return 0;
+    }
+  })
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -189,7 +210,34 @@ If two people have the same full name, the younger one should come first. Do not
 ------------------------------------------------------------------------------------------------ */
 
 const sortPeopleBetter = (arr) => {
-  // Solution code here...
+  arr.sort((a, b) => {
+    if (a.lastName.toUpperCase() === b.lastName.toUpperCase()) {
+      if (a.firstName.toUpperCase() === b.firstName.toUpperCase()) {
+        return a.age - b.age;
+      } else {
+        if (a.firstName.toUpperCase() < b.firstName.toUpperCase()) {
+          return -1;
+        }
+        else if (a.firstName.toUpperCase() > b.firstName.toUpperCase()) {
+          return 1;
+        }
+        else {
+          return 0;
+        }
+      }
+    } else {
+      if (a.lastName.toUpperCase() < b.lastName.toUpperCase()) {
+        return -1;
+      }
+      else if (a.lastName.toUpperCase() > b.lastName.toUpperCase()) {
+        return 1;
+      }
+      else {
+        return 0;
+      }
+    }
+  })
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -215,21 +263,54 @@ const meetings = [
 ];
 
 const sortMeetingsByDay = (arr) => {
-  // Solution code here...
+  let dayArr = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+
+  arr.sort((a, b) => {
+    let index1 = dayArr.findIndex(value => {
+      return value === a.dayOfWeek;
+    })
+    let index2 = dayArr.findIndex(value => {
+      return value === b.dayOfWeek;
+    })
+    return index1 - index2;
+  })
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 13 - Stretch Goal
 
-This challenge should use the array of meetings from challenge 9, above.
+This challenge should use the array of meetings from challenge 12, above.
 
 Sort the meetings in the order that they start. If two meetings start at the same time on the same day, the shorter meeting should come first.
 
-You DO NOT need to use your solution to Challenge 9 in completing Challenge 10.
+You DO NOT need to use your solution to Challenge 12 in completing Challenge 13.
 ------------------------------------------------------------------------------------------------ */
 
 const sortSchedule = (arr) => {
-  // Solution code here...
+  let dayArr = ['Monday', 'Tuesday', 'Wednesday', 'Thursday', 'Friday'];
+
+  arr.sort((a, b) => {
+    let index1 = dayArr.findIndex(value => {
+      return value === a.dayOfWeek;
+    })
+    let index2 = dayArr.findIndex(value => {
+      return value === b.dayOfWeek;
+    })
+    return index1 - index2;
+  })
+
+  arr.sort((a, b) => {
+    if (a.dayOfWeek === b.dayOfWeek) {
+      if (parseInt(a.start) === parseInt(b.start)) {
+        return parseInt(a.end) - parseInt(b.end);
+      } else {
+        return parseInt(a.start) - parseInt(b.start);
+      }
+    }
+  })
+
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -303,7 +384,7 @@ describe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 7', () => {
+describe('Testing challenge 7', () => {
   test('It should alphabetize without regard to capitalization', () => {
     expect(alphabetizeBetter(['Alice', 'apple', 'alert', 'Average'])).toStrictEqual(['alert', 'Alice', 'apple', 'Average']);
     const ans = alphabetizeBetter(['alphabet', 'Zebra', 'Alphabet', 'carrot']);
@@ -312,7 +393,7 @@ xdescribe('Testing challenge 7', () => {
   });
 });
 
-xdescribe('Testing challenge 6', () => {
+describe('Testing challenge 8', () => {
   test('It should sort strings by length', () => {
     const ans = sortByLength(['alphabet', 'Zebra', 'Alphabet', 'carrot']);
     expect(ans.slice(0, 2)).toStrictEqual(['Zebra', 'carrot']);
@@ -323,7 +404,7 @@ xdescribe('Testing challenge 6', () => {
   });
 });
 
-xdescribe('Testing challenge 9', () => {
+describe('Testing challenge 9', () => {
   test('It should sort numbers by their length', () => {
     expect(sortNumbersByLength([10, 2.8, 1, -47.75])).toStrictEqual([1, 10, 2.8, -47.75]);
     expect(sortNumbersByLength([100, 2.82, 1, -47.75])).toStrictEqual([1, 100, 2.82, -47.75]);
@@ -331,7 +412,7 @@ xdescribe('Testing challenge 9', () => {
   });
 });
 
-xdescribe('Testing challenge 10', () => {
+describe('Testing challenge 10', () => {
   test('It should sort people by their last names', () => {
     expect(sortPeople(people)).toStrictEqual([
       new Person('Casey', 'Codefellow', 38),
@@ -343,7 +424,7 @@ xdescribe('Testing challenge 10', () => {
   });
 });
 
-xdescribe('Testing challenge 11', () => {
+describe('Testing challenge 11', () => {
   test('It should sort people with more strict ordering', () => {
     const family = [
       new Person('Casey', 'Codefellows', 55),
@@ -364,7 +445,7 @@ xdescribe('Testing challenge 11', () => {
   });
 });
 
-xdescribe('Testing challenge 12', () => {
+describe('Testing challenge 12', () => {
   test('It should sort meetings by the day on which they happen', () => {
     const sortedMeetings = sortMeetingsByDay(meetings);
     expect(sortedMeetings.slice(0, 2)).toEqual(expect.arrayContaining([new Meeting('Monday', '0900', '0945'), new Meeting('Monday', '0900', '1000')]));
@@ -374,7 +455,7 @@ xdescribe('Testing challenge 12', () => {
   });
 });
 
-xdescribe('Testing challenge 13', () => {
+describe('Testing challenge 13', () => {
   test('It should sort meetings by when they happen', () => {
     expect(sortSchedule(meetings)).toStrictEqual([
       new Meeting('Monday', '0900', '0945'),
