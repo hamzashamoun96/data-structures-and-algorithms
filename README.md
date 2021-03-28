@@ -12,4 +12,17 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 
 ### 401 Data Structures, Code Challenges
 
-- Please follow the instructions specific to your 401 language, which can be found in the directory below, matching your course.
+
+# data-structures-and-algorithms-401
+
+
+# Reverse an Array
+Using the pop() and push() to reverse any array without using the reverse() method
+## Challenge
+Thinking of a way to reverse any array without using the reverse method
+## Approach & Efficiency
+<!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
+
+## Solution
+<!-- Embedded whiteboard image -->
+![array-reverse](./assets/array-reverse.png)
