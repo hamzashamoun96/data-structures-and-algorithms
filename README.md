@@ -25,4 +25,4 @@ Thinking of a way to reverse any array without using the reverse method
 
 ## Solution
 <!-- Embedded whiteboard image -->
-![array-reverse](/assets/array-reverse.png)
+![array-reverse](./assets/array-reverse.png)
