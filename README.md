@@ -18,3 +18,4 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 |Tabel Of Content|
 |----------------|
 | [Array Revese](https://github.com/hamzashamoun96/data-structures-and-algorithms/tree/master/challenges/arrayReverse)|
+|[Array Shift](https://github.com/hamzashamoun96/data-structures-and-algorithms/tree/master/challenges/arrayShift)|
