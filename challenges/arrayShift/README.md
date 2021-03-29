@@ -11,4 +11,4 @@ Thinking of a way to put the number in the middle of the array.
 
 ## Solution
 <!-- Embedded whiteboard image -->
-![array-reverse](/assets/array-reverse.png)
+![array-reverse](/assets/arrayShift.png)
