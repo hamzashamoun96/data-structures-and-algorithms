@@ -19,3 +19,4 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 |----------------|
 | [Array Revese](https://github.com/hamzashamoun96/data-structures-and-algorithms/blob/master/challenges/arrayReverse/array-README.md)|
 | [Array Shift](https://github.com/hamzashamoun96/data-structures-and-algorithms/blob/master/challenges/arrayShift/array-README.md)|
+| [Array Binary Search](https://github.com/hamzashamoun96/data-structures-and-algorithms/blob/array-binary-search/challenges/arrayBinarySearch/README..md)|
