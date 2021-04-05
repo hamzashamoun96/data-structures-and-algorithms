@@ -1,19 +1,20 @@
 'use strict';
 
 class Node {
-    constructor(value) {
-        this.value = value;
-        this.next = null;
-    }
+  constructor(value) {
+    this.value = value;
+    this.next = null;
+  }
 }
 
 
 class LinkedList {
-    constructor() {
-        this.head = null;
-        this.length = 0;
-        // this.tail = null;
-    }
+  constructor() {
+    this.head = null;
+    this.length = 0;
+    // this.tail = null;
+  }
+
 
     insert(value) {
       const newNode = new Node(value)
@@ -28,33 +29,34 @@ class LinkedList {
         lastNode.next = newNode
         this.length++
       }
-    }
-
-    includes(val) {
-        let boo = false;
-        let checkNode = this.head
-        for (let i = 0; i < this.length; i++) {
-            if (checkNode.value === val) {
-                boo = true;
-            } else {
-                checkNode = checkNode.next
-            }
-        }
-        return boo;
-    }
-    toString(){
-        let nextNode = this.head;
-        let str = `{${nextNode.value}}->`;
-        for(let i = 0; i < this.length; i++){
-          nextNode = nextNode.next
-          if(nextNode){
-           str +=`{${nextNode.value}}->`
-          }else{
-            str += 'NULL'
-          }
-        }
-        return str
+      
+  includes(val) {
+    let boo = false;
+    let checkNode = this.head
+    for (let i = 0; i < this.length; i++) {
+      if (checkNode.value === val) {
+        boo = true;
+      } else {
+        checkNode = checkNode.next
       }
+    }
+    return boo;
+  }
+  toString() {
+    let nextNode = this.head;
+    let str = `{${nextNode.value}}->`;
+    for (let i = 0; i < this.length; i++) {
+      nextNode = nextNode.next
+      if (nextNode) {
+        str += `{${nextNode.value}}->`
+      } else {
+        str += 'NULL'
+      }
+    }
+    return str
+  }
+
+
       append(value) {
         const newNode = new Node(value)
         if (!this.head) {
@@ -69,8 +71,9 @@ class LinkedList {
           this.length++
         }
       }
-      insertBefore(value, newVal){
-        let newNode = new Node(newVal);
+      
+  insertBefore(value, newVal) {
+    let newNode = new Node(newVal);
     if (this.head) {
       let currentNode = this.head;
       if (currentNode.value === value) {
@@ -89,9 +92,9 @@ class LinkedList {
         }
         currentNode = currentNode.next;
       }
-    } 
+    }
   }
-  insertAfter(value, newVal){
+  insertAfter(value, newVal) {
     let newNode = new Node(newVal);
     let current = this.head;
     while (current) {
@@ -105,9 +108,34 @@ class LinkedList {
       current = current.next;
     }
   }
+  kthFromEnd(k) {
+    let head = this.head;
+    let order = this.length;
+    head.order = order - 1;
+    if (this.length === 1) {
+      return head.value
+    }
+    while (head.next) {
+      if (head.order === k) {
+        return head.value;
+      } else if (k >= this.length || k < 0) {
+        return 'Exception';
+      }
+      head.next.order = order - 2;
+      head = head.next;
+      order--;
+      if (!head.next) {
+        if (head.order === k) {
+          return head.value;
+        } else if (k >= this.length) {
+          return 'Exception';
+        }
+      }
+    }
+  }
 }
 
 module.exports = {
-    Node: Node,
-    LinkedList: LinkedList,
+  Node: Node,
+  LinkedList: LinkedList,
 }

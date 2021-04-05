@@ -95,3 +95,61 @@ test('Can successfully insert a node after the last node of the linked list', ()
 
     expect(newLL.toString()).toBe("{10}->{5}->{7}->{20}->NULL");
 })
+
+test('Where k is greater than the length of the linked list', () => {
+    let newLL = new LinkedList();
+    newLL.append(60); // it will be the head.
+    newLL.append(50)
+    newLL.append(40)
+    newLL.append(40)
+    newLL.append(20)
+    newLL.append(10)
+    newLL.insertAfter(7,20)
+
+    expect(newLL.kthFromEnd(10)).toBe("Exception");
+})
+
+test('Where k and the length of the list are the same', () => {
+    let newLL = new LinkedList();
+    newLL.append(60); // it will be the head.
+    newLL.append(50)
+    newLL.append(40)
+    newLL.append(40)
+    newLL.append(20)
+    newLL.append(10)
+    newLL.insertAfter(7,20)
+
+    expect(newLL.kthFromEnd(6)).toBe("Exception");
+})
+
+test('Where k is not a positive integer', () => {
+    let newLL = new LinkedList();
+    newLL.append(60); // it will be the head.
+    newLL.append(50)
+    newLL.append(40)
+    newLL.append(40)
+    newLL.append(20)
+    newLL.append(10)
+    newLL.insertAfter(7,20)
+
+    expect(newLL.kthFromEnd(-1)).toBe("Exception");
+})
+
+test('Where the linked list is of a size 1', () => {
+    let newLL = new LinkedList();
+    newLL.append(60); // it will be the head.
+   
+
+    expect(newLL.kthFromEnd(0)).toBe(60);
+})
+
+test('Where k is not at the end, but somewhere in the middle of the linked list', () => {
+    let newLL = new LinkedList();
+    newLL.append(60); // it will be the head.
+    newLL.append(30)
+    newLL.append(40)
+    newLL.append(20)
+    newLL.append(10)
+
+    expect(newLL.kthFromEnd(2)).toBe(40);
+})
