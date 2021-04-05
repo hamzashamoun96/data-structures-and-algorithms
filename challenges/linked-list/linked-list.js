@@ -15,19 +15,19 @@ class LinkedList {
         // this.tail = null;
     }
 
-    append(value) {
-        const newNode = new Node(value)
-        if (!this.head) {
-            this.head = newNode;
-            this.length++;
-        } else {
-            let lastNode = this.head;
-            while (lastNode.next) {
-                lastNode = lastNode.next
-            }
-            lastNode.next = newNode
-            this.length++
+    insert(value) {
+      const newNode = new Node(value)
+      if (!this.head) {
+        this.head = newNode;
+        this.length++;
+      } else {
+        let lastNode = this.head;
+        while (lastNode.next) {
+          lastNode = lastNode.next
         }
+        lastNode.next = newNode
+        this.length++
+      }
     }
 
     includes(val) {
@@ -54,6 +54,20 @@ class LinkedList {
           }
         }
         return str
+      }
+      append(value) {
+        const newNode = new Node(value)
+        if (!this.head) {
+          this.head = newNode;
+          this.length++;
+        } else {
+          let lastNode = this.head;
+          while (lastNode.next) {
+            lastNode = lastNode.next
+          }
+          lastNode.next = newNode
+          this.length++
+        }
       }
       insertBefore(value, newVal){
         let newNode = new Node(newVal);

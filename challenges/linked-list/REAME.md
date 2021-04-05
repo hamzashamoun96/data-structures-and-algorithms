@@ -13,11 +13,13 @@ How to move to the next node.
 
 ## API
 <!-- Embedded whiteboard image -->
-1) append method : to add a new node to the linked list and a head if there is no head.
+1) insert method : to add a new node to the linked list and a head if there is no head.
 2) includes method : searching for a node value if it exists or not.
 3) toString method : showing all node values. 
-4) insertBefore method : Adding nodes locates anywhere in the middle of the linked list before a given value.
-5) insertAfter method : Adding nodes locates anywhere in the middle of the linked list after a given value.
+4) append method : to add a new node to the linked list and a head if there is no head.
+5) insertBefore method : Adding nodes locates anywhere in the middle of the linked list before a given value.
+6) insertAfter method : Adding nodes locates anywhere in the middle of the linked list after a given value.
 ## Test 
 * To test it in the terminal run the command npm test linked-list.
-======
+## Solution
+![uml](/assets/ll-insertions.png)
