@@ -6,7 +6,7 @@
 ## Challenge
 
 How to move to the next node.
-
+Adding an order to the node from the end to the head.
 
 ## Approach & Efficiency
 <!-- What approach did you take? Why? What is the Big O space/time for this approach? -->
@@ -18,6 +18,11 @@ How to move to the next node.
 3) toString method : showing all node values. 
 4) insertBefore method : Adding nodes locates anywhere in the middle of the linked list before a given value.
 5) insertAfter method : Adding nodes locates anywhere in the middle of the linked list after a given value.
+6) kthFrom method : getting the node value based on it's oreder in the list.
 ## Test 
 * To test it in the terminal run the command npm test linked-list.
+
+## Solution
+
+![linked-list](/assets/ll-kth-from.png)
 ======
