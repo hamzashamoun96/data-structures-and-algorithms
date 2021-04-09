@@ -65,10 +65,26 @@ class LinkedList {
       while (lastNode.next) {
         lastNode = lastNode.next
       }
+
       lastNode.next = newNode
       this.length++
     }
   }
+
+  includes(val) {
+    let boo = false;
+    let checkNode = this.head
+    for (let i = 0; i < this.length; i++) {
+      if (checkNode.value === val) {
+        boo = true;
+      } else {
+        checkNode = checkNode.next
+      }
+    }
+    return boo;
+  }
+
+
   insertBefore(value, newVal) {
     let newNode = new Node(newVal);
     if (this.head) {
