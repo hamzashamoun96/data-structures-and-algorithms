@@ -23,3 +23,4 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 | [Linked Lists](https://github.com/hamzashamoun96/data-structures-and-algorithms/blob/linked-list/challenges/linked-list/REAME.md)|
 | [Linked Lists 2](https://github.com/hamzashamoun96/data-structures-and-algorithms/blob/linked-list/challenges/linked-list/REAME.md)|
 | [ll Zip](https://github.com/hamzashamoun96/data-structures-and-algorithms/blob/linked-list/challenges/linked-list/REAME.md)|
+| [Stack and Queue]()|
