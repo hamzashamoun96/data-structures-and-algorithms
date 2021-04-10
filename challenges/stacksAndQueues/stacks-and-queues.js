@@ -70,7 +70,7 @@ class Queue {
                 dequeueNode = this.front;
                 this.front = null;
                 this.tail = null;
-                this.length--;
+                this.length = 0;
                 return dequeueNode;
             } else {
                 dequeueNode = this.front.value;
