@@ -25,3 +25,4 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 | [ll Zip](https://github.com/hamzashamoun96/data-structures-and-algorithms/blob/linked-list/challenges/linked-list/REAME.md)|
 | [Stack and Queue](https://github.com/hamzashamoun96/data-structures-and-algorithms/blob/stack-and-queue/challenges/stacksAndQueues/README.md)|
 | [Animal Shelter](https://github.com/hamzashamoun96/data-structures-and-algorithms/blob/fifo-animal-shelter/challenges/fifoAnimalShelter/README.md)|
+
