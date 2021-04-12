@@ -67,7 +67,7 @@ class Queue {
             return 'exception';
         } else {
             if (this.length === 1) {
-                dequeueNode = this.front;
+                dequeueNode = this.front.value;
                 this.front = null;
                 this.tail = null;
                 this.length = 0;
