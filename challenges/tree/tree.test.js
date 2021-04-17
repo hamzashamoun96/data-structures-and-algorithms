@@ -61,15 +61,15 @@ describe('Binary Search Tree', () => {
         expect(tree.root.value).toEqual(value);
     });
     it('can successfully add a left child and right child to a single root node', () => {
-      const tree = new BinarySearchTree();
-      const root = 10;
-      const value1 = 5;
-      const value2 = 20;
-      tree.add(root);
-      tree.add(value1);
-      tree.add(value2);
-      expect(tree.root.left.value).toEqual(value1);
-      expect(tree.root.right.value).toEqual(value2);
+        const tree = new BinarySearchTree();
+        const root = 10;
+        const value1 = 5;
+        const value2 = 20;
+        tree.add(root);
+        tree.add(value1);
+        tree.add(value2);
+        expect(tree.root.left.value).toEqual(value1);
+        expect(tree.root.right.value).toEqual(value2);
     });
     it('can successfully add a new node in the correct location in the binary search tree', () => {
         const tree = new BinarySearchTree();
@@ -80,16 +80,18 @@ describe('Binary Search Tree', () => {
         tree.add(7);
         tree.add(9);
 
-      expect(tree.root.left.right.right.value).toEqual(9);
-      expect(tree.root.right.left.value).toEqual(13);
+        expect(tree.root.left.right.right.value).toEqual(9);
+        expect(tree.root.right.left.value).toEqual(13);
     });
-    // it('can successfully search for a value in the tree', () => {
-    //   expect(tree.contains(3)).toBeTruthy();
-    //   expect(tree.contains(12)).toBeTruthy();
-    //   expect(tree.contains(15)).toBeFalsy();
-    // });
-    // it('returns an exception if tried to search in empty tree', () => {
-    //   const newTree = new BinarySearchTree();
-    //   expect(newTree.contains(1)).toBe('Empty Tree!');
-    // });
+    it('can successfully search for a value in the tree', () => {
+        const tree = new BinarySearchTree();
+        tree.add(10);
+        tree.add(5);
+        tree.add(15);
+        tree.add(13);
+
+        expect(tree.contains(10)).toBe(true);
+        expect(tree.contains(15)).toBe(true);
+        expect(tree.contains(19)).toBe(false);
+    });
 });

@@ -26,3 +26,4 @@ Each day, you'll add one new file to this folder to do your work for the day's a
 | [Stack and Queue](https://github.com/hamzashamoun96/data-structures-and-algorithms/blob/stack-and-queue/challenges/stacksAndQueues/README.md)|
 | [Animal Shelter](https://github.com/hamzashamoun96/data-structures-and-algorithms/blob/fifo-animal-shelter/challenges/fifoAnimalShelter/README.md)|
 | [Multi Bracket Validation](https://github.com/hamzashamoun96/data-structures-and-algorithms/blob/multi-bracket-validation/challenges/multiBracketValidation/README.md)|
+| [Tree](https://github.com/hamzashamoun96/data-structures-and-algorithms/blob/tree/challenges/tree/README.md)|
