@@ -65,10 +65,12 @@ class LinkedList {
       while (lastNode.next) {
         lastNode = lastNode.next
       }
+
       lastNode.next = newNode
       this.length++
     }
   }
+
   includes(val) {
     let boo = false;
     let checkNode = this.head
@@ -81,8 +83,6 @@ class LinkedList {
     }
     return boo;
   }
-
-
 
 
   insertBefore(value, newVal) {
@@ -119,6 +119,31 @@ class LinkedList {
         return;
       }
       current = current.next;
+    }
+  }
+  kthFromEnd(k) {
+    let head = this.head;
+    let order = this.length;
+    head.order = order - 1;
+    if (this.length === 1) {
+      return head.value
+    }
+    while (head.next) {
+      if (head.order === k) {
+        return head.value;
+      } else if (k >= this.length || k < 0) {
+        return 'Exception';
+      }
+      head.next.order = order - 2;
+      head = head.next;
+      order--;
+      if (!head.next) {
+        if (head.order === k) {
+          return head.value;
+        } else if (k >= this.length) {
+          return 'Exception';
+        }
+      }
     }
   }
 }
