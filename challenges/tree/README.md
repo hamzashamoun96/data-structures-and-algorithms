@@ -20,7 +20,13 @@ It is not a challenge when you know how
 * preOrder() Returns an array with the tree values ordered root > left > right.
 * inOrder() Returns an array with the tree values ordered left > root > right.
 * postOrder() Returns an array with the tree values ordered root > left > right.
+* findMaximumValue return the maximum value in the tree.
 
 The BinarySearchTree contains two methods:
 * add(value) Adds the input value in its place in the sorted tree.
 * contains(value) Search the tree and checks if the input value exists.
+
+## Test 
+* To test it in the terminal run the command npm test tree.
+## Solution
+![uml](/assets/tree.png)
