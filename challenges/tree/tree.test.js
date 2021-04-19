@@ -51,6 +51,11 @@ describe('Binary Tree', () => {
         // console.log(tree)
         expect(tree.findMaximumValue()).toBe(12);
     });
+    it('breadthFirst', () => {
+        const expected = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12];
+        const breadthFirst = tree.breadthFirst();
+        expect(breadthFirst).toEqual(expected);
+    });
 });
 describe('Binary Search Tree', () => {
     it('can successfully instantiate an empty tree', () => {

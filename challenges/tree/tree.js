@@ -54,21 +54,35 @@ class BinaryTree {
         _traverse(this.root);
         return result;
     }
-    findMaximumValue(){
+    findMaximumValue() {
         let max = 0;
-      const _traverse = (node) => {
-          if (node.left) {
-              _traverse(node.left)
-          };
-          if (node.right) {
-              _traverse(node.right)
-          };
-          if(node.value > max){
-              max = node.value
-          }
-      }
-      _traverse(this.root);
-      return max;
+        const _traverse = (node) => {
+            if (node.left) {
+                _traverse(node.left)
+            };
+            if (node.right) {
+                _traverse(node.right)
+            };
+            if (node.value > max) {
+                max = node.value
+            }
+        }
+        _traverse(this.root);
+        return max;
+    }
+    breadthFirst() {
+        let values = [];
+        let queue = [];
+        let current = this.root;
+        queue.push(current);
+        while (queue.length) {
+            current = queue.shift();
+            values.push(current.value);
+
+            if (current.left) queue.push(current.left);
+            if (current.right) queue.push(current.right);
+        };
+        return values;
     }
 }
 
@@ -85,13 +99,13 @@ class BinarySearchTree {
                 if (value > node.value) {
                     if (node.right) {
                         _traverse(node.right)
-                    }else{
+                    } else {
                         node.right = newNode;
                     }
                 } else if (value < node.value) {
                     if (node.left) {
                         _traverse(node.left)
-                    }else{
+                    } else {
                         node.left = newNode;
                     }
                 }
@@ -102,12 +116,12 @@ class BinarySearchTree {
     contains(value) {
         let root = this.root;
         while (root) {
-          if (value < root.value) root = root.left;
-          else if (value > root.value) root = root.right;
-          else return true;
+            if (value < root.value) root = root.left;
+            else if (value > root.value) root = root.right;
+            else return true;
         }
         return false;
-      }
+    }
 }
 
 module.exports = {
