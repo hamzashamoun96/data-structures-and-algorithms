@@ -10,7 +10,7 @@ It is not a challenge when you know how
 * preOrder: space O(h)/time O(n)
 * inOrder: space O(h)/time O(n)
 * postOrder: space O(h)/time O(n)
-
+* breadthFirst: space O(h)/time O(n)
 
 ### BinarySearchTree
 * add(value): space O(1)/time O(n)
@@ -20,7 +20,8 @@ It is not a challenge when you know how
 * preOrder() Returns an array with the tree values ordered root > left > right.
 * inOrder() Returns an array with the tree values ordered left > root > right.
 * postOrder() Returns an array with the tree values ordered root > left > right.
-* findMaximumValue return the maximum value in the tree.
+* findMaximumValue() return the maximum value in the tree.
+* breadthFirst() Returns an arra with the tree values ordered level by level from left to right.
 
 The BinarySearchTree contains two methods:
 * add(value) Adds the input value in its place in the sorted tree.
