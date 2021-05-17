@@ -3,9 +3,9 @@
 return a set of values found in both trees.
 
 
-### BinarySearchTree
-* add(value): space O(1)/time O(n)
-* contain(value): space O(1)/time O(n)
+### Big O
+* space O(1)
+* time O(n)
 
 ## API
 * tree_intersection function : takes two binary trees and return the values found in the both trees as an array.
