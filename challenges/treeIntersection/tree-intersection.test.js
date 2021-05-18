@@ -4,8 +4,9 @@ const treeIntersection = require("./tree-intersection.js");
 describe("Tree Instersection Test", () => {
     let tree1;
     let tree2;
-  beforeAll(() => {
     const a150 = new Node(150);
+    const b42 = new Node(42);
+  beforeAll(() => {
     const a100 = new Node(100);
     const a250 = new Node(250);
     const a75 = new Node(75);
@@ -27,7 +28,6 @@ describe("Tree Instersection Test", () => {
     a350.left = a300;
     a350.right = a500;
 
-    const b42 = new Node(42);
     const b100 = new Node(100);
     const b600 = new Node(600);
     const b15 = new Node(15);
@@ -52,7 +52,28 @@ describe("Tree Instersection Test", () => {
     tree1 = new BinaryTree(a150);
     tree2 = new BinaryTree(b42);
   });
+  it('should create two Binary trees',()=>{
+    expect(tree1.root.value).toBe(a150.value);
+    expect(tree2.root.value).toBe(b42.value);
+  });
   it('should return a set of values found in both trees.',()=>{
-      expect(treeIntersection(tree1,tree2)).toEqual([100, 160, 125, 175, 200, 350, 500])
+    expect(treeIntersection(tree1,tree2)).toEqual([100, 160, 125, 175, 200, 350, 500])
+  });
+  it('should thorw an exception when there is no common values',()=>{
+    const a100 = new Node(100);
+    const a200 = new Node(200);
+    const a300 = new Node(300);
+    a100.left = a200;
+    a100.right = a300;
+
+    const b50 = new Node(50);
+    const b150 = new Node(150);
+    const b250 = new Node(250);
+    b50.left = b150;
+    b50.right = b250;
+
+    tree1 = new BinaryTree(a100);
+    tree2 = new BinaryTree(b50);
+    expect(treeIntersection(tree1 , tree2)).toBe('Exception');
   });
 });
